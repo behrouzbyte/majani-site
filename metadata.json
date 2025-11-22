@@ -1,0 +1,8 @@
+{
+  "name": "مجانی",
+  "description": "بازاری برای اهدای لوازم بلااستفاده به همسایگان به صورت رایگان.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}

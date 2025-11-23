@@ -5,10 +5,11 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
-      // When deploying to GitHub Pages under a repository (not user/org root),
-      // set the base to the repository name so asset URLs are correct.
-      // Example: https://behrouzbyte.github.io/majani-site/ -> base '/majani-site/'
-      base: '/majani-site/',
+      // Use relative paths so the built site works regardless of hosting path.
+      // This produces asset URLs relative to the current location (e.g. './assets/...').
+      // NOTE: using a relative base can affect dev server behavior but is useful
+      // for static hosting (GitHub Pages, file://, subpath deployments).
+      base: './',
       server: {
         port: 3000,
         host: '0.0.0.0',

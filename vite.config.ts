@@ -5,6 +5,10 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
+      // When deploying to GitHub Pages under a repository (not user/org root),
+      // set the base to the repository name so asset URLs are correct.
+      // Example: https://behrouzbyte.github.io/majani-site/ -> base '/majani-site/'
+      base: '/majani-site/',
       server: {
         port: 3000,
         host: '0.0.0.0',

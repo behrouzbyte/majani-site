@@ -111,7 +111,7 @@ export const registerUser = async (data: Partial<User> & { password: string }): 
     passwordHash: hashPassword(data.password),
     city: data.city || 'نامشخص',
     province: data.province,
-    avatar: data.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(data.name || 'User')}&background=random`,
+    avatar: data.avatar || '/images/avatar.svg',
     email: data.email,
     gender: data.gender,
     birthDate: data.birthDate,
